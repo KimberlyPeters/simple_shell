@@ -24,8 +24,11 @@ int _execute(char **args, char *input);
 int _launch(char **args);
 void sigint_handler(int sig); 
 
+int _strcspn(char *str, const char *delimiter)
+int _strspn(char *str, const char *delimiter)
+char *_strtok_r(char *str, const char *delimiter, char **save_str)
+char *_strtok(char *str, const char *delimiter)
 
 
-
-
+	
 #endif
