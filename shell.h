@@ -29,6 +29,7 @@ int alloc_error(char *buffer);
 ssize_t _getline(char **line, size_t *n, FILE *stream);
 char *realloc_buffer(char *buffer, size_t *bufsize);
 int check_alloc(void *ptr);
+int _my_getc(void);
 
 int _strcspn(char *str, const char *delimiter);
 int _strspn(char *str, const char *delimiter);
