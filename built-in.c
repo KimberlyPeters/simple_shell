@@ -133,5 +133,23 @@ int set_environ(char *name, char *value)
 		{
 			count++;
 		}
-		count
-
+		count += 2;
+		new_environment = malloc(sizeof(char *) * (count + 1));
+		if (new_environment == NULL)
+		{
+			perror("hsh:");
+			return (1);
+		}
+		for (i = 0; i < count - 1; i++)
+		{
+			new_environment[i] = current_environment[i];
+		}
+		_strcpy(new_variable, name);
+		_strcat(new_variable, "=");
+		_strcat(new_variable, value);
+		new_environment[i] = _strdup(new_variable);
+		new_environment[i + 1] = NULL;
+		environ = new_environment;
+	}
+	return (1);
+}
