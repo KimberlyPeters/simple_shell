@@ -29,7 +29,7 @@ int alloc_error(char *buffer)
  * Return: Return the number of characters read,
  * including the delimiter character.
  */
-ssize_t _getline(char **line, size_t *n, __attribute__((unused)) FILE * stream)
+ssize_t _getline(char **line, size_t *n, FILE *stream)
 {
 	size_t bufsize = 1024, index = 0;
 	int c, f = 0;

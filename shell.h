@@ -26,7 +26,7 @@ void sigint_handler(int sig);
 
 /* Function declarations (prototypes) for auxiliary funtions */
 int alloc_error(char *buffer);
-ssize_t _getline(char **line, size_t *n, __attribute__((unused)) FILE *stream);
+ssize_t _getline(char **line, size_t *n, FILE *stream);
 char *realloc_buffer(char *buffer, size_t *bufsize);
 int check_alloc(void *ptr);
 
