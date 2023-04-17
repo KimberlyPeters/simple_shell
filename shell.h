@@ -36,6 +36,9 @@ int _strspn(char *str, const char *delimiter);
 char *_strtok_r(char *str, const char *delimiter, char **save_str);
 char *_strtok(char *str, const char *delimiter);
 
+int alloc_error2(char *buffer);
+int alloc_error1(char *buffer, char *dest_path);
+char **_check_path(char **args, int *flag);
 
 	
 #endif
