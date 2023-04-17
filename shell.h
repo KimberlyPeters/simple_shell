@@ -40,5 +40,11 @@ int alloc_error2(char *buffer);
 int alloc_error1(char *buffer, char *dest_path);
 char **_check_path(char **args, int *flag);
 
-	
+/* Function declarations (prototypes) for built-in functions*/
+int change_directory(char **arguments, char *input);
+int display_help(char **arguments, char *input);
+int exit_shell(char **arguments, char *input);
+int display_environ(char **arguments, char *input);
+int set_environ(char *name, char *value);
+
 #endif
