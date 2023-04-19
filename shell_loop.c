@@ -34,7 +34,7 @@ void shell_loop(void)
 			return;
 		}
 
-		level = _execute(args, insert);
+		level = execute_builtin(args, insert);
 
 		free(insert);
 		free(args);

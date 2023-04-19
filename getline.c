@@ -42,7 +42,7 @@ ssize_t _getline(char **line, size_t *n, FILE *stream)
 	while (1) /* Infinite loop for prompt*/
 	{
 		fflush(stdout); /* Flush the stdout in every iteration */
-		c = _getc(); /* Read a character */
+		c = _my_getc(); /* Read a character */
 		if (c == EOF || c == '\n')
 		{
 			*(buffer + index) = '\0';
