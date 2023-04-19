@@ -45,8 +45,8 @@ char *_getenv(const char *var_name);
 int change_directory(char **arguments, char *input);
 int display_help(char **arguments, char *input);
 int exit_shell(char **arguments, char *input);
-int display_environ(char **arguments, char *input);
-int set_environ(char *name, char *value);
+int _env(char **arguments, char *input);
+int _setenv(char *name, char *value);
 
 /* mem_aux.c */
 void _memcpy(void *dest, const void *src, unsigned int n);
