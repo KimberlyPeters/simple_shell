@@ -40,6 +40,7 @@ int alloc_error2(char *buffer);
 int alloc_error1(char *buffer, char *dest_path);
 char **_check_path(char **args, int *flag);
 char *_getenv(const char *var_name);
+char **_split_path(char *line, char *copy_line);
 
 /* Function declarations (prototypes) for built-in functions*/
 int change_directory(char **arguments, char *input);
