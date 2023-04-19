@@ -48,4 +48,10 @@ int exit_shell(char **arguments, char *input);
 int display_environ(char **arguments, char *input);
 int set_environ(char *name, char *value);
 
+/* mem_aux.c */
+void _memcpy(void *dest, const void *src, unsigned int n);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char **_reallocdp(char **ptr, unsigned int old_size, unsigned int new_size);
+
+
 #endif
