@@ -86,12 +86,12 @@ int exit_shell(__attribute__((unused)) char **arguments, char *input)
 }
 
 /**
-  * display_environ - Display the environ in the shell.
+  * _env - Display the environ in the shell.
   * @arguments: List of arguments passed from parsing.
   * @input: Input line for free.
   * Return: 1 if works.
   */
-int display_environ(__attribute__((unused)) char **arguments,
+int _env(__attribute__((unused)) char **arguments,
 		__attribute__((unused)) char *input)
 {
 	int i = 0;
@@ -106,12 +106,12 @@ int display_environ(__attribute__((unused)) char **arguments,
 }
 
 /**
-  * set_environ - Set a environment variable.
+  * _setenv - Set a environment variable.
   * @name: Name of the variable
   * @value: Value in the variable.
   * Return: 1 if works.
   */
-int set_environ(char *name, char *value)
+int _setenv(char *name, char *value)
 {
 	char *temp, new_variable[1024];
 	char **current_environmentironment = environ;

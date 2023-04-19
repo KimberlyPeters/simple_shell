@@ -10,7 +10,7 @@ int (*builtin_functions[])(char **arguments, char *input) = {
 	&change_directory,
 	&display_help,
 	&exit_shell,
-	&display_environ,
+	&_env,
 };
 
 /**
@@ -28,7 +28,7 @@ int execute_builtin(char **arguments, char *input)
 		return (1);
 
 	if (_strcmp(arguments[0], "setenv") == 0)
-		return (set_environ(arguments[1], arguments[2]));
+		return (_setenv(arguments[1], arguments[2]));
 
 	for (i = 0; i < 4; i++)
 	{
