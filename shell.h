@@ -48,6 +48,7 @@ int display_help(char **arguments, char *input);
 int exit_shell(char **arguments, char *input);
 int _env(char **arguments, char *input);
 int _setenv(char *name, char *value);
+int _unsetenv(char *name);
 
 /* mem_aux.c */
 void _memcpy(void *dest, const void *src, unsigned int n);
