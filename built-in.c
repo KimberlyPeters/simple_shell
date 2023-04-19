@@ -11,7 +11,7 @@ int change_directory(char **arguments, __attribute__((unused)) char *input)
 
 	if (arguments[1] == NULL)
 	{
-		if (chdir(_getenv("HOME")) != 0)
+		if (chdir(get_environ("HOME")) != 0)
 		{
 			perror("hsh:");
 		}
