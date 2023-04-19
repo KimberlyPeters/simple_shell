@@ -22,7 +22,7 @@ char *_read_line(void);
 char **_split_line(char *line);
 int _execute(char **args, char *input);
 int _launch(char **args);
-void sigint_handler(int sig); 
+void sigint_handler(int sig);
 
 /* Function declarations (prototypes) for auxiliary funtions */
 int alloc_error(char *buffer);
@@ -39,6 +39,7 @@ char *_strtok(char *str, const char *delimiter);
 int alloc_error2(char *buffer);
 int alloc_error1(char *buffer, char *dest_path);
 char **_check_path(char **args, int *flag);
+char *get_environ(const char *var_name);
 
 /* Function declarations (prototypes) for built-in functions*/
 int change_directory(char **arguments, char *input);
