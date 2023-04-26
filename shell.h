@@ -72,7 +72,7 @@ void _memcpy(void *dest, const void *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **_reallocdp(char **ptr, unsigned int old_size, unsigned int new_size);
 
-int _strlen(char *s);
+int _strlen(const char *s);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *str1, char *str2);
 char *_strcpy(char *dest, char *src);
