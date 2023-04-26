@@ -54,8 +54,15 @@ int display_help(__attribute__((unused)) char **arguments,
  */
 int exit_shell(char **arguments, char *input)
 {
+	int exit_status = EXIT_SUCCESS;
+
+	if (arguments[1] != NULL)
+	{
+		exit_status = _atoi(arguments[1]);
+	}
+
 	free(input);
 	free(arguments);
-	exit(EXIT_SUCCESS);
+	exit(exit_status);
 	return (0);
 }
