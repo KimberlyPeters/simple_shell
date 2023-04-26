@@ -46,57 +46,16 @@ int display_help(__attribute__((unused)) char **arguments,
 	}
 	return (1);
 }
-
 /**
-  * exit_shell - Exit to the shell.
-  * @arguments: List of arguments passed from parsing.
-  * @input: Input line for free.
-  * Return: 0 if works.
-  */
-int exit_shell(__attribute__((unused)) char **arguments, char *input)
-{
-	int exit_value;
-
-	if (arguments[1] == NULL)
-		return (0);
-
-	exit_value = _atoi(arguments[1]);
-
-	if (exit_value < 0)
-	{
-		perror("hsh:");
-		return (1);
-	}
-	else if (exit_value == 0)
-	{
-		return (0);
-	}
-	else if (exit_value >= 256)
-	{
-		free(input);
-		free(arguments);
-		exit(exit_value - 256);
-	}
-	else
-	{
-		free(input);
-		free(arguments);
-		exit(exit_value);
-	}
-}
-/**
- * test_exit_builtin - Tests the exit built-in.
- *
- * Return: 0 if successful, 1 otherwise.
+ * exit_shell - Exit the shell.
+ * @arguments: List of arguments passed from parsing.
+ * @input: Input line for free.
+ * Return: Always returns 0 to exit the shell.
  */
-int test_exit_builtin(void)
+int exit_shell(char **arguments, char *input)
 {
-	char *argv[] = {"exit", NULL};
-	int status;
-
-	status = exit_shell(argv, NULL);
-	if (status == 0)
-		return (0);
-	else
-		return (1);
+	free(input);
+	free(arguments);
+	exit(EXIT_SUCCESS);
+	return (0);
 }

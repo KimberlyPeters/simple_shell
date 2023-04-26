@@ -66,7 +66,6 @@ char *_getenv(const char *var_name);
 char **_split_path(char *input_line, char *copy_input_line);
 int change_directory(char **arguments, char *input);
 int exit_shell(char **arguments, char *input);
-int test_exit_builtin(void);
 
 /* mem_aux.c */
 void _memcpy(void *dest, const void *src, unsigned int n);
