@@ -1,4 +1,24 @@
 #include "shell.h"
+
+/**
+  * _env - Display the environ in the shell.
+  * @arguments: List of arguments passed from parsing.
+  * @input: Input line for free.
+  * Return: 1 if works.
+  */
+int _env(__attribute__((unused)) char **arguments,
+		__attribute__((unused)) char *input)
+{
+	int i = 0;
+
+	while (environ[i] != 0)
+	{
+		_puts(environ[i]);
+		_puts("\n");
+		i++;
+	}
+	return (1);
+}
 /**
   * _setenv - Set a environment variable.
   * @name: Name of the variable

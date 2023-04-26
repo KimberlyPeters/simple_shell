@@ -84,23 +84,19 @@ int exit_shell(__attribute__((unused)) char **arguments, char *input)
 		exit(exit_value);
 	}
 }
-
 /**
-  * _env - Display the environ in the shell.
-  * @arguments: List of arguments passed from parsing.
-  * @input: Input line for free.
-  * Return: 1 if works.
-  */
-int _env(__attribute__((unused)) char **arguments,
-		__attribute__((unused)) char *input)
+ * test_exit_builtin - Tests the exit built-in.
+ *
+ * Return: 0 if successful, 1 otherwise.
+ */
+int test_exit_builtin(void)
 {
-	int i = 0;
+	char *argv[] = {"exit", NULL};
+	int status;
 
-	while (environ[i] != 0)
-	{
-		_puts(environ[i]);
-		_puts("\n");
-		i++;
-	}
-	return (1);
+	status = exit_shell(argv, NULL);
+	if (status == 0)
+		return (0);
+	else
+		return (1);
 }
