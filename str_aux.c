@@ -126,7 +126,5 @@ int _strncmp(const char *str1, const char *str2, int n)
 			return (char1 - char2);
 		n--;
 	}
-
 	return (0);
-
 }
