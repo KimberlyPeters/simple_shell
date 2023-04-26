@@ -12,6 +12,7 @@
 #include <fcntl.h>
 #include <signal.h>
 #include <limits.h>
+#include <stddef.h>
 
 /* Environmental variables */
 extern char **environ;

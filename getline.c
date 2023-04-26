@@ -29,12 +29,14 @@ int alloc_error(char *buffer)
  * Return: Return the number of characters read,
  * including the delimiter character.
  */
-ssize_t _getline(char **line, size_t *n, FILE *stream)
+ssize_t _getline(char **line, size_t *n, __attribute__((unused))FILE * stream)
 {
 	size_t bufsize = 1024, index = 0;
 	int c, f = 0;
 	char *buffer;
 
+	if (*n == 0)
+		bufsize = 1024;
 	buffer = malloc(sizeof(char) * bufsize);
 	if (check_alloc(buffer) == -1)
 		return (-1);
@@ -44,14 +46,12 @@ ssize_t _getline(char **line, size_t *n, FILE *stream)
 		fflush(stdout); /* Flush the stdout in every iteration */
 		c = _my_getc(); /* Read a character */
 		if (c == EOF || c == '\n')
-		{
-			*(buffer + index) = '\0';
+		{*(buffer + index) = '\0';
 			if (c == EOF)
 				return (-1);
 			else
 				return (index + 1);
-		}
-		else if (c == ' ')
+		} else if (c == ' ')
 		{
 			if (f == 0)
 			{
@@ -59,8 +59,7 @@ ssize_t _getline(char **line, size_t *n, FILE *stream)
 				*(buffer + index) = c;
 				index++;
 			}
-		}
-		else
+		} else
 		{
 			f = 0;
 			*(buffer + index) = c;
@@ -68,10 +67,11 @@ ssize_t _getline(char **line, size_t *n, FILE *stream)
 		}
 		if (index >= bufsize) /* If the buffer is exceeded, reallocate. */
 			buffer = realloc_buffer(buffer, &bufsize);
-			if (!buffer)
-				return (-1);
+		if (!buffer)
+			return (-1);
 	}
 }
+
 /**
  * realloc_buffer - Reallocates the buffer when it is exceeded.
  *
@@ -81,8 +81,9 @@ ssize_t _getline(char **line, size_t *n, FILE *stream)
  */
 char *realloc_buffer(char *buffer, size_t *bufsize)
 {
+	char *new_buffer;
 	*bufsize += 1024;
-	char *new_buffer = _realloc(buffer, *bufsize - 1024, *bufsize);
+	new_buffer = _realloc(buffer, *bufsize - 1024, *bufsize);
 
 	if (alloc_error(new_buffer) == -1)
 	{
@@ -91,6 +92,7 @@ char *realloc_buffer(char *buffer, size_t *bufsize)
 	}
 	return (new_buffer);
 }
+
 /**
  * check_alloc - Checks if the memory allocation is successful.
  *
