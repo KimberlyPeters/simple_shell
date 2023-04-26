@@ -38,17 +38,33 @@ char *_strtok(char *str, const char *delimiter);
 
 int alloc_error2(char *buffer);
 int alloc_error1(char *buffer, char *dest_path);
-char **_check_path(char **args, int *flag);
-char *_getenv(const char *var_name);
-char **_split_path(char *input_line, char *copy_input_line)
+
 
 /* Function declarations (prototypes) for built-in functions*/
-int change_directory(char **arguments, char *input);
+
+/**
+  * display_help - Help function
+  * @arguments: List of arguments passed from parsing.
+  * @input: Input line for free.
+  * Return: 1 if works.
+  */
 int display_help(char **arguments, char *input);
-int exit_shell(char **arguments, char *input);
+
+/**
+  * _env - Env function
+  * @arguments: List of arguments passed from parsing.
+  * @input: Input line for free.
+  * Return: 1 if works.
+  */
 int _env(char **arguments, char *input);
 int _setenv(char *name, char *value);
 int _unsetenv(char *name);
+
+char **_check_path(char **args, int *flag);
+char *_getenv(const char *var_name);
+char **_split_path(char *input_line, char *copy_input_line);
+int change_directory(char **arguments, char *input);
+int exit_shell(char **arguments, char *input);
 
 /* mem_aux.c */
 void _memcpy(void *dest, const void *src, unsigned int n);
