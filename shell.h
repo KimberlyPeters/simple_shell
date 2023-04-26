@@ -77,6 +77,7 @@ char *_strcat(char *dest, char *src);
 int _strcmp(char *str1, char *str2);
 char *_strcpy(char *dest, char *src);
 int _strncmp(const char *str1, const char *str2, int n);
+char *_strdup(const char *s);
 void _puts(char *str);
 int _putchar(char c);
 int _atoi(char *s);
