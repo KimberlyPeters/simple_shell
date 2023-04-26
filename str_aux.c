@@ -96,36 +96,39 @@ int _strncmp(const char *str1, const char *str2, int n)
 {
 	unsigned char char1 = '\0';
 	unsigned char char2 = '\0';
-	int n_quotient;
-
+	int n_quotient = 0;
+	
 	if (n >= 4)
 	{
 		n_quotient = n >> 2;
-		do {
-			char1 = (unsigned char) *str1++;
-			char2 = (unsigned char) *str2++;
-			if (char1 == '\0' || char1 != char2)
-				return (char1 - char2);
-			char1 = (unsigned char) *str1++;
-			char2 = (unsigned char) *str2++;
-			if (char1 == '\0' || char1 != char2)
-				return (char1 - char2);
-			char1 = (unsigned char) *str1++;
-			char2 = (unsigned char) *str2++;
-			if (char1 == '\0' || char1 != char2)
-				return (char1 - char2);
-			char1 = (unsigned char) *str1++;
-			char2 = (unsigned char) *str2++;
-			if (char1 == '\0' || char1 != char2)
-				return (char1 - char2);
-		}
-	while (n > 0)
-	{
-		char1 = (unsigned char)*str1++;
-		char2 = (unsigned char)*str2++;
-		if (char1 == '\0' || char1 != char2)
-			return (char1 - char2);
-		n--;
-	}
-	return (0);
+        do {
+            char1 = (unsigned char)*str1++;
+            char2 = (unsigned char)*str2++;
+            if (char1 == '\0' || char1 != char2)
+                return (char1 - char2);
+            char1 = (unsigned char)*str1++;
+            char2 = (unsigned char)*str2++;
+            if (char1 == '\0' || char1 != char2)
+                return (char1 - char2);
+            char1 = (unsigned char)*str1++;
+            char2 = (unsigned char)*str2++;
+            if (char1 == '\0' || char1 != char2)
+                return (char1 - char2);
+            char1 = (unsigned char)*str1++;
+            char2 = (unsigned char)*str2++;
+            if (char1 == '\0' || char1 != char2)
+                return (char1 - char2);
+        } while (n_quotient-- > 0);
+    }
+
+    while (n > 0)
+    {
+        char1 = (unsigned char)*str1++;
+        char2 = (unsigned char)*str2++;
+        if (char1 == '\0' || char1 != char2)
+            return (char1 - char2);
+        n--;
+    }
+    return (0);
 }
+
