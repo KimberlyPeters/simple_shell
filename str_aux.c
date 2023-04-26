@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * _strlen - Find the length of a string.
  * @s: string.
