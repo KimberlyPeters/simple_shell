@@ -27,7 +27,7 @@ void shell_loop(void)
 		if (insert == NULL)
 			return;
 
-		args = _split_line(input);
+		args = _split_line(insert);
 		if (args == NULL)
 		{
 			free(insert);

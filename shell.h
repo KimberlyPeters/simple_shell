@@ -21,7 +21,7 @@ extern char **environ;
 void shell_loop(void);
 char *_read_line(void);
 char **_split_line(char *line);
-int _execute(char **args, char *input);
+int execute_builtin(char **arguments, char *input);
 int _launch(char **args);
 void sigint_handler(int signal);
 
